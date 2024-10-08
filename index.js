@@ -7,6 +7,7 @@ app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(express.static(path.join(__dirname,"public/css")));
 app.use(express.static(path.join(__dirname,"public/js")));
+app.use(express.static(path.join(__dirname,"public/images")));
 
 app.get("/",(req,res) => {
     res.render("home.ejs");
@@ -30,6 +31,14 @@ app.get("/resources",(req,res) => {
 
 app.get("/topic",(req,res) => {
     res.render("topic.ejs");
+});
+
+app.get("/difficulty",(req,res) => {
+    res.render("difficulty.ejs");
+});
+
+app.get("/company",(req,res) => {
+    res.render("company.ejs");
 });
 
 app.listen(port,()=> {
